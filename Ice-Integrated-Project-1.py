@@ -1,44 +1,3 @@
-# Hi, Mohamed 
-#     
-# Thank you for submiting such a nice project
-#     
-# There are many things that I like
-#     
-# - great code
-# - good visualizations
-# - correct code for hypotheses testing
-# - nice project structure
-# 
-# 
-# 
-# <span class="text-danger">There are just few issues that need to be fixed: please correct all red comments 
-# </span>
-#     
-# One more time and you will have it
-
-# <div class="alert alert-block alert-success">
-#     
-# <b>**General feedback v2**</b> <a class="tocSkip"></a>
-#     
-# Hi, Mohamed 
-#     
-# Thank you for your corrections
-#     
-# Now your project is perfect
-#     
-# **I am happy to say that your project has been accepted**
-#     
-# Keep up good work and good luck in the next sprint
-
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~Please add the project title and short project description~~ </div>
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment v2</b> <a 
-# class="tocSkip"></a>
-# Fixed </div>
-
 # # Project Name: Global Platfoms and Video Games Data Analysis
 # ## The aim of this project is to analyze all the gaming platforms and video games accross all the regions in order to conclude the populars ones and the reasons behind this conclusion.
 
@@ -68,10 +27,6 @@ import datetime
 df = pd.read_csv("/datasets/games.csv")
 
 
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-# Great We have necessary data </div>
-
 # ### The dataframe is for the Excel document of Videogames of gaming platforms and their global information.
 
 # In[3]:
@@ -94,12 +49,6 @@ df.dtypes
 
 
 df.describe()
-
-
-# <div class="alert alert-block alert-warning"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-#     
-# ~~Please use df.describe()~~ </div>
 
 # ### The above information describe the data of each column in the Games dataframe.
 
@@ -158,10 +107,7 @@ df["name"] = df["name"].astype(str)
 
 # ### Data is being prepared for cleaning for better analysis and data visualization.
 
-# <div class="alert alert-block alert-warning"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-#     
-# ~~We have "tbd" values only in user_score column You used pd.to_numeric with parameter errors = "coerce" So all 'tbd' became NaN That means you dont need to replace them~~ </div>
+
 
 # In[9]:
 
@@ -200,12 +146,6 @@ sales_columns = ["na_sales", "eu_sales", "jp_sales", "other_sales"]
 df["total_sales"] = df[sales_columns].sum(axis=1)
 
 
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-# Well done</div>
-
-# ### New column for total_sales
-
 # In[12]:
 
 
@@ -213,16 +153,6 @@ df["total_sales"] = df[sales_columns].sum(axis=1)
 
 df.head()
 
-
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~Before further steps please check missing values in dataset and decide what we should do with them~~
-# 
-# ~~We can not fill in missing values for critic_score and user_score For rating we need to fill with "unknown" Rows with missing values in other columns can be droped~~
-# </div>
-
-# ### We can take a look using the above code at how our data looked like after preparing it for further analysis.
 
 # In[13]:
 
@@ -250,14 +180,6 @@ plt.show()
 
 # ### Ever since the year 1980 there are releases of new games every year. This number would obviously increase each year because of the evolution in technology. For example, in the year 1995 less than 200 games were released, this number increased to more than 1400 new released game in the year 2008 but then decreased afterwords to 500 games in 2015.
 
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~Please add a visualization with dynamics of number of games~~</div>
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment v2</b> <a 
-# class="tocSkip"></a>
-# Great</div>
 
 # In[14]:
 
@@ -274,10 +196,6 @@ significant_years.sum()
 
 
 # ### We have set the threshold at 350 for the minimum number of games per year. It shows that from the year 1998 to 2016 there are at least 350 games released every year except in 1999.
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-# Right conclusion</div>
 
 # In[15]:
 
@@ -572,14 +490,6 @@ plt.show()
 
 # ### The above figure shows the platforms with the lowest percentage of sales. The highest is Wii with -76.90% then X360 with -76.43%, then PSP -75.00%, then PS3 -71.68%, then WiiU with -48.82%. 
 
-# <div class="alert alert-block alert-warning"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-#     
-# ~~There is not need to create df_relevant again~~ </div>
-
-# In[25]:
-
-
 # Analyze Data
 
 # Total sales for each platform between 2014 and 2016
@@ -667,11 +577,6 @@ plt.ylabel("Total Sales")
 plt.title("Professional Reviews vs. Total Sales (PS4)")
 plt.show()
 
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-# Nice scatterplots You also can check sns.pairplot from seaborn</div>
-
 # ### The relationship between total sales and professional reviews is strong than that with user reviews. If the reviews are less than 70/100 it drives much less sales if it was higher than that score.
 
 # In[30]:
@@ -737,18 +642,6 @@ print(f"Correlation between critic_score and total_sales: {corr}")
 
 
 # ### The correlation between critic score and total sales is 0.24 which indicates a positive relationship between them but it is a weak relation. This means that as the critic score increases the total sales increase.
-
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~Here and further - please use data only for relevant period~~
-#     
-# 
-# </div>
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment v2</b> <a 
-# class="tocSkip"></a>
-# Done</div>
 
 # In[36]:
 
@@ -872,17 +765,6 @@ plt.show()
 
 # ### The Boxplot shows that the genre with the highest total sales is Action with 199.36 million dollars then comes Shooter with 170.94 million dollars and the least is Puzzle genre with 2.21 million dollars.
 
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~We need to take into account the impact of outliers Please add boxplot for total sales broken by genres~~
-# 
-# </div>
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment v2</b> <a 
-# class="tocSkip"></a>
-# Super</div>
-
 # In[43]:
 
 
@@ -949,18 +831,6 @@ print("\nSales by ESRB Rating in EU (2014-2016):\n", rating_sales[['rating', 'eu
 print("\nSales by ESRB Rating in JP (2014-2016):\n", rating_sales[['rating', 'jp_sales']])
 
 
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~When you fill in missing values for rating with "unknown" for example you will see huge difference for Japan~~
-#     
-# 
-# </div>
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment v2</b> <a 
-# class="tocSkip"></a>
-# Fixed</div>
-
 # ### Although these findings imply that ESRB ratings can have some effect on sales, it's crucial to remember that other elements like player preferences, game popularity, marketing, and genre can all have a big impact on sales in a given area. Furthermore, the interpretation of these data may be impacted by the fact that the ESRB rating system is largely utilised in North America and that other rating systems may be in use elsewhere.
 # 
 
@@ -1023,17 +893,6 @@ else:
     print("We fail to reject the null hypothesis. There is no significant difference between the average user ratings for the Action and Sports genres.")
 
 
-# <div class="alert alert-block alert-danger">
-# <b>Reviewer's comment</b> <a class="tocSkip"></a>
-#     
-# ~~Code is correct but results will be different for relevant period~~
-# 
-# </div>
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment v2</b> <a 
-# class="tocSkip"></a>
-# Now results are correct</div>
-
 # ### We chose alpha = 0.05 because it is the most popular significance level. H0 hypothesis is that the average user ratings for the Action and Sports genres are significantly differentt. The p-value is less than alpha which means that we to reject the null hypothesis. There is a significant difference between the average user ratings for the Action and Sports genres.
 
 # In[48]:
@@ -1065,11 +924,6 @@ for platform in top_platforms:
         print("No user ratings available.")
         print()
 
-
-# <div class="alert alert-block alert-success"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-# Great</div>
-
 # # Conlusion
 # 
 # ### The top 5 platforms in terms of overall total sales are: PS2, X360, PS3, Wii, DS
@@ -1090,12 +944,6 @@ for platform in top_platforms:
 # 
 # ### There is a significant difference between the average user ratings for the Action and Sports genres.
 
-# <div class="alert alert-block alert-warning"> <b>Reviewer's comment</b> <a 
-# class="tocSkip"></a>
-#     
-# ~~Please change the conclusion if necessary~~ </div>
-
-# In[ ]:
 
 
 
